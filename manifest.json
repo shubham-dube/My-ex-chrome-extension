@@ -2,14 +2,12 @@
   "manifest_version": 3,
   "name": "My-Ex - Personal Productivity Hub",
   "version": "1.0.0",
-  "description": "Manage your tasks, expenses, courses seamlessly",
+  "description": "Manage your tasks, track expenses, and organize courses, its material all in one place with reminders, priorities, and progress tracking.",
   "permissions": [
-    "storage",
-    "notifications",
-    "alarms"
+    "storage"
   ],
   "host_permissions": [
-    "http://localhost:5000/*"
+    "https://my-ex-backend.vercel.app/*"
   ],
   "action": {
     "default_popup": "popup.html",

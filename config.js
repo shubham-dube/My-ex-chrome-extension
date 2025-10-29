@@ -1,6 +1,6 @@
 // Configuration
 const CONFIG = {
-  API_BASE_URL: 'http://localhost:5000/api',
+  API_BASE_URL: 'https://my-ex-backend.vercel.app/api',
   STORAGE_KEYS: {
     TOKEN: 'auth_token',
     USER: 'user_data',
