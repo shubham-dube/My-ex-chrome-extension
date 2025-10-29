@@ -1,0 +1,399 @@
+
+/* Expense Stats Dashboard */
+.expense-stats-dashboard {
+  margin-bottom: 0;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 14px;
+}
+
+.stat-card-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.stat-icon-month {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.stat-icon-today {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.stat-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-content .stat-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.stat-content .stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Expense Chart */
+.expense-chart-container {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  margin-right: 14px;
+  margin-left: 14px;
+}
+
+.chart-header h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+}
+
+.expense-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chart-bar {
+  display: grid;
+  grid-template-columns: 80px 1fr 60px;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.chart-bar-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+
+.chart-bar-track {
+  height: 6px;
+  background: var(--bg-tertiary);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.chart-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.chart-bar-value {
+  text-align: right;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Category Colors */
+.category-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.category-food, .chart-bar-fill.category-food { background: #10b981; }
+.category-transport, .chart-bar-fill.category-transport { background: #3b82f6; }
+.category-utilities, .chart-bar-fill.category-utilities { background: #f59e0b; }
+.category-entertainment, .chart-bar-fill.category-entertainment { background: #ec4899; }
+.category-healthcare, .chart-bar-fill.category-healthcare { background: #ef4444; }
+.category-education, .chart-bar-fill.category-education { background: #8b5cf6; }
+.category-shopping, .chart-bar-fill.category-shopping { background: #06b6d4; }
+.category-rent, .chart-bar-fill.category-rent { background: #6366f1; }
+.category-other, .chart-bar-fill.category-other { background: #64748b; }
+
+/* Expense Groups - Tree Structure */
+.expense-group-month {
+  margin-bottom: 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.expense-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  transition: background 0.2s;
+}
+
+.expense-group-header:hover {
+  background: var(--bg-tertiary);
+}
+
+.expense-group-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.expand-icon {
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.expense-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: var(--primary);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.expense-group-total {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--danger);
+}
+
+.expense-group-content {
+  max-height: 2000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.expense-group-content.collapsed {
+  max-height: 0;
+}
+
+/* Week Groups */
+.expense-group-week {
+  border-top: 1px solid var(--border);
+}
+
+.expense-week-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: var(--bg-primary);
+  transition: background 0.2s;
+}
+
+.expense-week-header:hover {
+  background: var(--bg-secondary);
+}
+
+.expense-week-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.expand-icon-small {
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.expense-count-small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 9px;
+}
+
+.expense-week-total {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.expense-week-content {
+  max-height: 2000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.expense-week-content.collapsed {
+  max-height: 0;
+}
+
+/* Compact Expense Items */
+.expense-item-compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border-light);
+  transition: background 0.2s;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.expense-item-compact:hover {
+  background: var(--bg-secondary);
+}
+
+.expense-item-compact:hover .expense-compact-actions {
+  opacity: 1;
+}
+
+.expense-compact-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex: 1;
+  gap: 12px;
+}
+
+.expense-compact-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.expense-compact-category {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  text-transform: capitalize;
+}
+
+.expense-compact-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.expense-tags-compact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.tag-mini {
+  padding: 2px 6px;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 10px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.expense-compact-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.expense-compact-amount {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--danger);
+}
+
+.expense-compact-date {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.expense-compact-actions {
+  display: flex;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  margin-left: 8px;
+}
+
+.action-btn-mini {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-secondary);
+}
+
+.action-btn-mini:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.delete-expense-btn:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .chart-bar {
+    grid-template-columns: 70px 1fr 55px;
+    font-size: 11px;
+  }
+
+  .expense-compact-amount {
+    font-size: 14px;
+  }
+
+  .expense-compact-category {
+    font-size: 12px;
+  }
+}
