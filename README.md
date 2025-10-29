@@ -8,12 +8,19 @@ Your Chrome Extension should have the following structure:
 my-ex-extension/
 ├── manifest.json
 ├── popup.html
-├── styles.css
 ├── config.js
 ├── api.js
 ├── ui.js
 ├── popup.js
 ├── background.js
+├── css/
+│   ├── styles.css
+│   ├── auth.css
+│   ├── courses.css
+│   ├── expenses.css
+│   ├── layout.css
+│   ├── modals.css
+│   ├── todos.css
 ├── icons/
 │   ├── icon16.png
 │   ├── icon48.png
